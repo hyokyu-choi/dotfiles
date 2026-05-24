@@ -1,0 +1,273 @@
+/* Catppuccin Mocha Palette 정의 */
+@define-color base #1e1e2e;
+@define-color text #cdd6f4;
+@define-color crust #11111b;
+@define-color surface0 #1a1d25;
+/*@define-color surface0 #313244;*/
+
+@define-color pure-black #000000;
+
+@define-color lavender #b4befe;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color pink #f5c2e7;
+
+* {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font-family: "fa-regular-400", "JetBrains Mono", "Iosevka Nerd Font", sans-serif;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @base;
+  color: @text;
+  border-bottom: 2px solid @surface0;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+/* =====================================================================
+ * Workspaces
+ * ===================================================================== */
+#workspaces {
+  color: @pure-black;
+  background-color: @surface0;
+  padding: 0 12px;
+  margin: 4px;
+  border-radius: 75px;
+  background-clip: padding-box;
+}
+
+#workspaces button {
+  padding: 0px 8px;
+  background: transparent;
+  color: @text;
+}
+
+#workspaces button.active {
+  border-bottom: 3px solid @lavender;
+  color: @lavender;
+}
+
+#workspaces button.urgent {
+  border-bottom: 3px solid @red;
+  color: @red;
+}
+
+/* =====================================================================
+ * 기능성 모듈 전역 아이콘/글자 통합 검은색 설정 
+ * (label 스코프까지 묶어 아이콘 색상 누락 방지)
+ * ===================================================================== */
+
+#custom-pacman, #custom-pacman label {
+  background: @yellow;
+  color: @pure-black;
+}
+#custom-pacman {
+  border-radius: 90px;
+  padding: 0 10px;
+  margin: 4px 3px;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#custom-pacman.pending-updates, #custom-pacman.pending-updates label {
+  animation-name: blink-update;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+#custom-pacman.active, #custom-pacman.active label {
+  background-color: @red;
+  color: @pure-black;
+  animation-name: none;
+}
+@keyframes blink-update {
+  to {
+    background-color: @surface0;
+    color: @text;
+  }
+}
+
+#custom-kernel, #custom-kernel label {
+  background: @pink;
+  color: @pure-black;
+}
+#custom-kernel {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+
+#custom-media, #custom-media label {
+  background: @teal;
+  color: @pure-black;
+}
+#custom-media {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+
+#custom-usb, #custom-usb label {
+  background: @lavender;
+  color: @pure-black;
+}
+#custom-usb {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+
+#custom-dunst, #custom-dunst label {
+  background: @pink;
+  color: @pure-black;
+}
+#custom-dunst {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+
+#custom-vpn, #custom-vpn label {
+  background: @mauve;
+  color: @pure-black;
+}
+#custom-vpn {
+  border-radius: 90px;
+  padding: 0 10px;
+  margin: 4px 3px;
+}
+
+#network, #network label {
+  background: @blue;
+  color: @pure-black;
+}
+#network {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+#network.disconnected, #network.disabled, 
+#network.disconnected label, #network.disabled label {
+  background-color: @surface0;
+  color: @pure-black;
+}
+
+#memory, #memory label {
+  background: @maroon;
+  color: @pure-black;
+}
+#memory {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+
+#cpu, #cpu label {
+  background: @sky;
+  color: @pure-black;
+}
+#cpu {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+
+#disk, #disk label {
+  background: @lavender;
+  color: @pure-black;
+}
+#disk {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+
+#pulseaudio, #pulseaudio label {
+  background: @peach;
+  color: @pure-black;
+}
+#pulseaudio {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+#pulseaudio.muted, #pulseaudio.muted label {
+  background-color: @surface0;
+  color: @text; /* 음소거 시 배경이 어두워지므로 문자 반전 */
+}
+
+#bluetooth, #bluetooth label {
+  background: @blue;
+  color: @pure-black;
+}
+#bluetooth {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+
+#backlight, #backlight label {
+  background: @mauve;
+  color: @pure-black;
+}
+#backlight {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+
+#clock, #clock label {
+  background: @green;
+  color: @pure-black;
+}
+#clock {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+
+#battery, #battery label {
+  background: @yellow;
+  color: @pure-black;
+}
+#battery {
+  padding: 0 10px;
+  margin: 4px 3px;
+  border-radius: 90px;
+}
+#battery.charging, #battery.charging label {
+  background-color: @green;
+  color: @pure-black;
+  animation-name: blink;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes blink {
+  to {
+    background-color: @surface0;
+    color: @text;
+  }
+}
+#battery.critical:not(.charging), #battery.critical:not(.charging) label {
+  background-color: @red;
+  color: @pure-black;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}

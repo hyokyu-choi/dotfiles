@@ -1,4 +1,4 @@
 .git
 .DS_Store
-nvim/lazy-lock.json
-# copy.fish
+fish_variables
+history
