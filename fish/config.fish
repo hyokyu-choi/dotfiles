@@ -1,7 +1,10 @@
-fish_vi_key_bindings
+# fish setup
+set fish_vi_key_bindings yes
 
-# ssh
-eval (ssh-agent -c)
+# SSH Agent
+if not set -q SSH_AUTH_SOCK
+  eval (ssh-agent -c) > /dev/null
+end
 
 # yazi
 function y
@@ -13,10 +16,11 @@ function y
 	command rm -f -- "$tmp"
 end
 
-# hyprland
+# Hyprland
 if status is-login
     if test (tty) = /dev/tty1
         exec start-hyprland
     end
 end
 
+alias wifi="impala"
