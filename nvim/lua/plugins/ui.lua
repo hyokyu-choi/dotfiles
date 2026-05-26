@@ -1,9 +1,8 @@
-local function bufferFormat(buffer, context)
-  return buffer .. '｜' .. context.bufnr
-end
-
 require("mini.icons").setup()
+MiniIcons.mock_nvim_web_devicons()
+
 require('lualine').setup({
+
   options = {
     icons_enabled = true,
     section_separators = '',
@@ -20,7 +19,15 @@ require('lualine').setup({
   },
   tabline = {
     lualine_a = { 'tabs' },
-    lualine_b = { { 'buffers', fmt = bufferFormat } },
+    lualine_b = {
+      {
+        'buffers',
+        show_filename_only = true,
+        hide_filename_extension = false,
+        show_modified_status = true,
+        mode = 2,
+      },
+    },
   },
 })
 
