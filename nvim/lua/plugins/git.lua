@@ -46,6 +46,9 @@ local neogit = require("neogit")
 
 neogit.setup({
   kind = "floating",
+  floating = {
+    border = "single",
+  },
 })
 
 vim.keymap.set("n", "<leader>gg", function() neogit.open() end, { desc = "Neogit status" })

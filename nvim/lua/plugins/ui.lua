@@ -7,20 +7,20 @@ require("oil").setup({
     -- "mtime",
   },
   float = {
-    border = "rounded",
+    border = "single",
   },
   confirmation = {
-    border = "rounded",
+    border = "single",
   },
   progress = {
-    border = "rounded",
+    border = "single",
     minimized_border = "none",
   },
   ssh = {
-    border = "rounded",
+    border = "single",
   },
   keymaps_help = {
-    border = "rounded",
+    border = "single",
   },
 })
 

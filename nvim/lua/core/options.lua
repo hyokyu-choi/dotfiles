@@ -16,7 +16,7 @@ vim.opt.ruler = false
 vim.opt.termguicolors = true
 vim.opt.signcolumn = 'yes'
 vim.opt.updatetime = 100
-vim.opt.winborder = 'rounded'
+vim.opt.winborder = 'single'
 
 -- backup
 vim.opt.backup = false
@@ -28,4 +28,3 @@ vim.opt.fileencodings:append('utf-8,euc-kr')
 vim.opt.autoread = true
 vim.opt.mouse = 'a'
 vim.opt.clipboard = 'unnamed'
-
