@@ -63,7 +63,6 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 ]]
 
 local telescope = require("telescope")
---local default_color = "tokyonight"
 telescope.setup({
   defaults = {
     preview = { treesitter = true },
@@ -81,10 +80,10 @@ telescope.setup({
     },
     path_displays = { "smart" },
     layout_config = {
-      height = 100,
-      width = 400,
       prompt_position = "top",
       preview_cutoff = 40,
+      width = { padding = 0 },
+      height = { padding = 0 },
     }
   }
 })
