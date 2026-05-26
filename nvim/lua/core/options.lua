@@ -27,6 +27,8 @@ vim.opt.fileencodings:append("utf-8,euc-kr")
 -- io
 vim.opt.autoread = true
 vim.opt.mouse = "a"
+
+-- clipboard
 if vim.env.SSH_CONNECTION or vim.env.SSH_CLIENT then
   vim.g.clipboard = {
     name = "OSC 52",
