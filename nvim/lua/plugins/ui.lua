@@ -1,4 +1,29 @@
+local function bufferFormat(buffer, context)
+  return buffer .. '｜' .. context.bufnr
+end
+
 require("mini.icons").setup()
+require('lualine').setup({
+  options = {
+    icons_enabled = true,
+    section_separators = '',
+    component_separators = '',
+  },
+  always_show_tabline = true,
+  sections = {
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', 'diff', 'diagnostics' },
+    lualine_c = { { 'filename', path = 1 } },
+    lualine_x = { 'filetype' },
+    lualine_y = { 'location' },
+    lualine_z = { 'progress' },
+  },
+  tabline = {
+    lualine_a = { 'tabs' },
+    lualine_b = { { 'buffers', fmt = bufferFormat } },
+  },
+})
+
 require("oil").setup({
   columns = {
     "icon",
