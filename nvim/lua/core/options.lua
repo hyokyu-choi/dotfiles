@@ -14,15 +14,15 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = false
 vim.opt.termguicolors = true
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 100
-vim.opt.winborder = 'single'
+vim.opt.winborder = "single"
 
 -- backup
 vim.opt.backup = false
 vim.opt.swapfile = false
 
-vim.opt.fileencodings:append('utf-8,euc-kr')
+vim.opt.fileencodings:append("utf-8,euc-kr")
 
 -- io
 vim.opt.autoread = true

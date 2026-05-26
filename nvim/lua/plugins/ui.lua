@@ -1,27 +1,27 @@
 require("mini.icons").setup()
 MiniIcons.mock_nvim_web_devicons()
 
-require('lualine').setup({
+require("lualine").setup({
 
   options = {
     icons_enabled = true,
-    section_separators = '',
-    component_separators = '',
+    section_separators = "",
+    component_separators = "",
   },
   always_show_tabline = true,
   sections = {
-    lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'diff', 'diagnostics' },
-    lualine_c = { { 'filename', path = 1 } },
-    lualine_x = { 'filetype' },
-    lualine_y = { 'location' },
-    lualine_z = { 'progress' },
+    lualine_a = { "mode" },
+    lualine_b = { "branch", "diff", "diagnostics" },
+    lualine_c = { { "filename", path = 1 } },
+    lualine_x = { "filetype" },
+    lualine_y = { "location" },
+    lualine_z = { "progress" },
   },
   tabline = {
-    lualine_a = { 'tabs' },
+    lualine_a = { "tabs" },
     lualine_b = {
       {
-        'buffers',
+        "buffers",
         show_filename_only = true,
         hide_filename_extension = false,
         show_modified_status = true,
