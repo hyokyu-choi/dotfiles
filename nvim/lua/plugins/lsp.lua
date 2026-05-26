@@ -8,7 +8,7 @@ vim.lsp.enable({
   "vimls",
   "yamlls",
   "bashls",
-  "rust-analyzer",
+  "rust_analyzer",
   "taplo",
 })
 
