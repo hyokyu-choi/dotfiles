@@ -2,6 +2,7 @@ vim.pack.add({
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
   { src = "https://github.com/nvim-mini/mini.icons" },
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
