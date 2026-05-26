@@ -25,7 +25,7 @@ require("lualine").setup({
         show_filename_only = true,
         hide_filename_extension = false,
         show_modified_status = true,
-        mode = 2,
+        mode = 0,
       },
     },
   },
