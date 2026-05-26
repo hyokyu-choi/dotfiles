@@ -14,6 +14,8 @@ vim.pack.add({
   { src = "https://github.com/sindrets/diffview.nvim" },
   { src = "https://github.com/NeogitOrg/neogit" },
   { src = "https://github.com/akinsho/toggleterm.nvim" },
+  { src = "https://github.com/windwp/nvim-autopairs" },
+  { src = "https://github.com/nvim-mini/mini.surround" },
 })
 
 require("plugins.lsp")
@@ -21,3 +23,4 @@ require("plugins.treesitter")
 require("plugins.ui")
 require("plugins.git")
 require("plugins.terminal")
+require("plugins.edit")
