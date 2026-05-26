@@ -1,0 +1,13 @@
+-- <leader>
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+-- indent
+vim.keymap.set("v", "<", "<gv", {desc="Indent decrease"})
+vim.keymap.set("v", ">", ">gv", {desc="Indent increase"})
+
+-- buffer, tab
+vim.keymap.set("n", "<C-b>h", ":bprevious<CR>", {desc="Previous buffer"})
+vim.keymap.set("n", "<C-b>l", ":bnext<CR>", {desc="Next buffer"})
+vim.keymap.set("n", "<C-t>h", ":tabprevious<CR>", {desc="Previous tab"})
+vim.keymap.set("n", "<C-t>l", ":tabnext<CR>", {desc="Next tab"})
