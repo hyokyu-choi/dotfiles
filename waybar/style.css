@@ -65,11 +65,6 @@ window#waybar {
   color: @red;
 }
 
-/* =====================================================================
- * 기능성 모듈 전역 아이콘/글자 통합 검은색 설정 
- * (label 스코프까지 묶어 아이콘 색상 누락 방지)
- * ===================================================================== */
-
 #custom-pacman, #custom-pacman label {
   background: @yellow;
   color: @pure-black;
@@ -205,7 +200,7 @@ window#waybar {
 }
 #pulseaudio.muted, #pulseaudio.muted label {
   background-color: @surface0;
-  color: @text; /* 음소거 시 배경이 어두워지므로 문자 반전 */
+  color: @text;
 }
 
 #bluetooth, #bluetooth label {

@@ -4,7 +4,7 @@
 {
     "custom/kernel": {
         "format": "<span foreground='#c6089e'></span> {}",
-	    "max-length": 15,
+	      "max-length": 15,
         "interval": 3600,
         "exec": "uname -r"
     },
@@ -16,7 +16,7 @@
             "2": " ",
             "3": "🗗 ",
             "4": " ",
-	    "5": " ",
+	          "5": " ",
             "6": "✉ ",
             "7": " ",
             "8": "",
@@ -25,13 +25,13 @@
             "default": ""
         },
         "sort-by-number": true,
-	    "on-scroll-up": "hyperctl dispatch workspace e+1",
-	    "on-scroll-down": "hyperctl dispatch workspace e-1",
-	    "on-click": "activate"
+	      "on-scroll-up": "hyperctl dispatch workspace e+1",
+	      "on-scroll-down": "hyperctl dispatch workspace e-1",
+	      "on-click": "activate"
     },
 
     "custom/pacman": {
-        "format": "{} <span foreground='#928374'> </span>",
+        "format": "{} <span foreground='#000000'> </span>",
         "interval": 60,
         "exec": "checkupdates | wc -l",
         "exec-if": "exit 0",
@@ -40,20 +40,20 @@
 
     "custom/media": {
         "format": "{icon}{text}",
-	    "escape": true,
-	    "return-type": "json",
-        "max-length": 25,
+	      "escape": true,
+	      "return-type": "json",
+        "max-length": 35,
         "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null"
     },
 
     "custom/dunst": {
-    	"exec": "$HOME/.config/waybar/scripts/dunst.sh",
-	    "on-click": "dunstctl set-paused toggle",
-    	"restart-interval": 1,
-	    "return-type": "json",
-	    "max-length": 10,
-	    "signal": 8,
-	    "format": "<span foreground='#928374'></span>{}"
+    	  "exec": "$HOME/.config/waybar/scripts/dunst.sh",
+	      "on-click": "dunstctl set-paused toggle",
+    	  "restart-interval": 1,
+	      "return-type": "json",
+	      "max-length": 10,
+	      "signal": 8,
+	      "format": "<span foreground='#928374'></span>{}"
     },
 
     "clock": {
@@ -126,7 +126,7 @@
 
     "network": {
         "interval": 5,
-        "interface": "wlp3s0",
+        "interface": "wlan0",
         "format-wifi": "<span foreground='#000000'>   {essid}</span>",
         "format-ethernet": "<span foreground='#000000'>⮔ {ipaddr}/{cidr}</span>",
         "format-linked": "<span foreground='#000000'>⚡{ifname}</span>",
