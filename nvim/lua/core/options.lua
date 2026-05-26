@@ -26,5 +26,32 @@ vim.opt.fileencodings:append("utf-8,euc-kr")
 
 -- io
 vim.opt.autoread = true
-vim.opt.mouse = 'a'
-vim.opt.clipboard = 'unnamed'
+vim.opt.mouse = "a"
+if vim.env.SSH_CONNECTION or vim.env.SSH_CLIENT then
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = {
+      ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+    },
+  }
+else
+  vim.g.clipboard = {
+    name = "wl-clipboard",
+    copy = {
+      ["+"] = { "wl-copy", "--type", "text/plain" },
+      ["*"] = { "wl-copy", "--type", "text/plain" },
+    },
+    paste = {
+      ["+"] = { "wl-paste", "--no-newline" },
+      ["*"] = { "wl-paste", "--no-newline" },
+    },
+    cache = {
+      enabled = true,
+    },
+  }
+end

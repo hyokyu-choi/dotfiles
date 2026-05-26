@@ -19,3 +19,8 @@ vim.keymap.set("n", "<Left>", ":bprevious<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<Right>", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<Up>", ":tabprevious<CR>", { desc = "Previous tab" })
 vim.keymap.set("n", "<Down>", ":tabnext<CR>", { desc = "Next tab" })
+
+-- yank
+vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank line" })
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank selected block" })
+vim.keymap.set("n", "<leader>Y", '"+y$', { desc = "Yank to line end" })
