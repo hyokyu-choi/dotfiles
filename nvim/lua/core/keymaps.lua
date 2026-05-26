@@ -24,3 +24,6 @@ vim.keymap.set("n", "<Down>", ":tabnext<CR>", { desc = "Next tab" })
 vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank line" })
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank selected block" })
 vim.keymap.set("n", "<leader>Y", '"+y$', { desc = "Yank to line end" })
+
+-- highlight
+vim.keymap.set({ "n", "x", "o" }, "<leader>nh", '<cmd>nohl<cr>', { desc = "nohl" })
