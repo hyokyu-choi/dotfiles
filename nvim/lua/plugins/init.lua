@@ -16,6 +16,7 @@ vim.pack.add({
   { src = "https://github.com/akinsho/toggleterm.nvim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/nvim-mini/mini.surround" },
+  { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 })
 
 require("plugins.lsp")
