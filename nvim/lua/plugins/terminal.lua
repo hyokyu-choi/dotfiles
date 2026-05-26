@@ -1,4 +1,15 @@
 require("toggleterm").setup({
   open_mapping = [[<c-\>]],
-  direction = 'float',   -- 'vertical' | 'horizontal' | 'tab' | 'float'
+  direction = 'tab',   -- 'vertical' | 'horizontal' | 'tab' | 'float'
+  highlights = {
+    Normal = {
+      link = "Normal",
+    },
+    NormalFloat = {
+      link = "Normal",
+    },
+    FloatBorder = {
+      link = "FloatBorder",
+    },
+  },
 })
