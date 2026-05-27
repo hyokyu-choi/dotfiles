@@ -23,4 +23,5 @@ if status is-login
     end
 end
 
+alias ls="lsd"
 alias wifi="impala"
