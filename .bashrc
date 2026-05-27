@@ -69,9 +69,11 @@ PS1='\[\e[33m\][@\h] \[\e[32m\]\w\[\e[0m\]${CMSSW_OPEN}\[\e[36m\]${CMSSW_ENV_ON}
 # bash editor
 export EDITOR="nvim"
 
-# user alias
-alias ls="lsd"
-alias ll="lsd -lh"
+# ls with icon
+if command -v lsd &>/dev/null; then
+  alias ls="lsd"
+  alias ll="lsd -lh"
+fi
 
 # path
 export PATH="$HOME/.local/bin:$PATH"
