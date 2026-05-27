@@ -64,7 +64,7 @@ function build_git_prompt() {
 
 PROMPT_COMMAND="build_git_prompt; $PROMPT_COMMAND"
 
-PS1='\e[33m[@\h] \e[32m\w\e[0m${CMSSW_OPEN}\e[36m${CMSSW_ENV_ON}\e[0m${CMSSW_BAR}\e[36m${ROOT_ENV_ON}\e[0m${CMSSW_CLOSE}\e[0m${GIT_OPEN}\e[35m${GIT_BRANCH}\e[0m${GIT_BAR}\e[34m${GIT_MOD_STATUS}\e[32m${GIT_CLEAN_STATUS}\e[0m${GIT_CLOSE}\e[31m${STATUS_OPEN}${STATUS}${STATUS_CLOSE}\n\e[32m❯\e[0m '
+PS1='\[\e[33m\][@\h] \[\e[32m\]\w\[\e[0m\]${CMSSW_OPEN}\[\e[36m\]${CMSSW_ENV_ON}\[\e[0m\]${CMSSW_BAR}\[\e[36m\]${ROOT_ENV_ON}\[\e[0m\]${CMSSW_CLOSE}\[\e[0m\]${GIT_OPEN}\[\e[35m\]${GIT_BRANCH}\[\e[0m\]${GIT_BAR}\[\e[34m\]${GIT_MOD_STATUS}\[\e[32m\]${GIT_CLEAN_STATUS}\[\e[0m\]${GIT_CLOSE}\[\e[31m\]${STATUS_OPEN}${STATUS}${STATUS_CLOSE}\n\[\e[32m\]❯\[\e[0m\] '
 
 # bash editor
 export EDITOR="nvim"
