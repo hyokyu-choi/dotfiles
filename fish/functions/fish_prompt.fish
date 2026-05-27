@@ -2,6 +2,7 @@ function fish_prompt --description 'Write out the prompt'
     set -l last_status $status
     set -l normal (set_color normal)
     set -l status_color (set_color brgreen)
+    set -l host_color (set_color yellow)
     set -l cwd_color (set_color $fish_color_cwd)
     set -l prompt_status ""
 
@@ -52,6 +53,6 @@ function fish_prompt --description 'Write out the prompt'
         set prompt_status $status_color "[" $last_status "]" $normal
     end
 
-    echo -s $cwd_color (prompt_pwd_full) $normal (fish_vcs_prompt) $normal ' ' $prompt_status
+    echo -s $host_color [@$hostname] ' ' $cwd_color (prompt_pwd_full) $normal (fish_vcs_prompt) $normal ' ' $prompt_status
     echo -n -s $status_color $suffix ' ' $normal
 end
