@@ -2,8 +2,6 @@
 My personal dotfiles setup to using many environment
 
 ## Dependencies
-- Ghostty
-- Fish
 - Neovim 0.12+: `vim.pack`, and `vim.lsp` is available with `nvim` 0.12+
     - In my setup, neovim version is controlled with `bob`
     - `git`, `wget`, `npm`: for `vim.lsp` with `Mason`
