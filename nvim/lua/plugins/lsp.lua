@@ -4,7 +4,7 @@ vim.lsp.enable({
   "lua_ls",
   "clangd",
   "texlab",
-  "pylsp",
+  "ruff",
   "vimls",
   "yamlls",
   "bashls",
