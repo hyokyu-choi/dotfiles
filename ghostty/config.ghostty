@@ -3,7 +3,7 @@ theme = TokyoNight Moon
 font-family = JetBrainsMono Nerd Font
 # korean fallback font
 font-family = goorm Sans Code
-font-size = 16
+font-size = 11
 cursor-style = block
 
 shell-integration = fish
