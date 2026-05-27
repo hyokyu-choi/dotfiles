@@ -13,5 +13,5 @@ Make soft link in configulation directory (`~/.config/`)
 ln -s $(pwd)/ghostty $HOME/.config/
 ln -s $(pwd)/fish $HOME/.config/
 ln -s $(pwd)/nvim $HOME/.config/
-
+ln -s $(pwd)/aerospace $HOME/.config/
 ```
