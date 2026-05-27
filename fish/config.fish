@@ -5,7 +5,7 @@ set -gx EDITOR $HOME/.local/share/bob/nvim-bin/nvim
 set -gx SUDO_EDITOR $HOME/.local/share/bob/nvim-bin/nvim
 
 # user alias
-alias ll "lsd -l"
+alias ls "lsd"
 alias obsidian "cd $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/ingB3"
 
 # path
