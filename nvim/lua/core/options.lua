@@ -43,14 +43,14 @@ if vim.env.SSH_CONNECTION or vim.env.SSH_CLIENT then
   }
 else
   vim.g.clipboard = {
-    name = "wl-clipboard",
+    name = "pbcopy",
     copy = {
-      ["+"] = { "wl-copy", "--type", "text/plain" },
-      ["*"] = { "wl-copy", "--type", "text/plain" },
+      ["+"] = { "pbcopy", "--type", "text/plain" },
+      ["*"] = { "pbcopy", "--type", "text/plain" },
     },
     paste = {
-      ["+"] = { "wl-paste", "--no-newline" },
-      ["*"] = { "wl-paste", "--no-newline" },
+      ["+"] = { "pbpaste", "--no-newline" },
+      ["*"] = { "pbpaste", "--no-newline" },
     },
     cache = {
       enabled = true,
