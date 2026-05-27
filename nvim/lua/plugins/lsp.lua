@@ -13,6 +13,12 @@ vim.lsp.enable({
   "marksman",
 })
 
+vim.filetype.add({
+  extension = {
+    mdx = "markdown.mdx",
+  },
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("my.lsp", {}),
 	callback = function(args)
