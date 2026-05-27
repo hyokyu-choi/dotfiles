@@ -10,6 +10,7 @@ vim.lsp.enable({
   "bashls",
   "rust_analyzer",
   "taplo",
+  "marksman",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
