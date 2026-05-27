@@ -1,10 +1,24 @@
 # fish setup
-set fish_vi_key_bindings yes
+set -g fish_key_bindings fish_vi_key_bindings
+set -gx VISUAL nvim
+set -gx EDITOR $HOME/.local/share/bob/nvim-bin/nvim
+set -gx SUDO_EDITOR $HOME/.local/share/bob/nvim-bin/nvim
 
-# SSH Agent
-if not set -q SSH_AUTH_SOCK
-  eval (ssh-agent -c) > /dev/null
-end
+# user alias
+alias ll "lsd -l"
+alias obsidian "cd $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/ingB3"
+
+# path
+fish_add_path (brew --prefix)/bin
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.local/share/bob/nvim-bin
+fish_add_path $HOME/opt/lua@5.1/bin
+fish_add_path $HOME/Library/Python/3.9/bin
+
+# environment variables
+set -gx VIMPYTHON $HOME/.conda/envs/root_env/bin/python3
+set -gx VIMCTAGS (brew --prefix)/bin/ctags
+set -gx DYLD_FALLBACK_LIBRARY_PATH (brew --prefix)/lib $DYLD_FALLBACK_LIBRARY_PATH
 
 # yazi
 function y
@@ -16,11 +30,25 @@ function y
 	command rm -f -- "$tmp"
 end
 
-# Hyprland
-if status is-login
-    if test (tty) = /dev/tty1
-        exec start-hyprland
+# Cargo environment
+source "$HOME/.cargo/env.fish"
+
+# Added by `rbenv init`
+status --is-interactive; and rbenv init - --no-rehash fish | source
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /opt/miniforge3/bin/conda
+    eval /opt/miniforge3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/opt/miniforge3/etc/fish/conf.d/conda.fish"
+        . "/opt/miniforge3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/opt/miniforge3/bin" $PATH
     end
 end
 
-alias wifi="impala"
+if test -f "/opt/miniforge3/etc/fish/conf.d/mamba.fish"
+    source "/opt/miniforge3/etc/fish/conf.d/mamba.fish"
+end
+# <<< conda initialize <<<
