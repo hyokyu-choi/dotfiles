@@ -1,0 +1,7 @@
+theme = TokyoNight Moon
+font-family = JetBrainsMono Nerd Font Mono  # default
+font-family = 구름 산스 코드 400  # korean
+font-size = 12
+cursor-style = block
+
+shell-integration = fish

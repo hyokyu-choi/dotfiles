@@ -1,24 +1,29 @@
-local map = vim.keymap.set
-local functions = require('core.functions')
+-- <leader>
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
--- Terminal mode
--- map('n', 'T', ':terminal<CR>')   -- instead use toggleterm.nvim
-map('t', '<C-[>', '<esc>')
-map('t', '<esc>', '<C-\\><C-n>')
+-- terminal
+vim.keymap.set("t", "C-[", "<esc>", { desc = "Terminal mode esc" })
+vim.keymap.set("t", "<esc>", "<C-\\><C-n>", { desc = "Terminal mode esc" })
 
--- Line number
-map('n', '<leader>n', functions.toggleRelativeNumber)
+-- indent
+vim.keymap.set("v", "<", "<gv", { desc = "Indent decrease" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent increase" })
 
--- Indent
-map('v', '<', '<gv')
-map('v', '>', '>gv')
+-- buffer, tab
+vim.keymap.set("n", "<C-f>h", ":bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<C-f>l", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<C-t>h", ":tabprevious<CR>", { desc = "Previous tab" })
+vim.keymap.set("n", "<C-t>l", ":tabnext<CR>", { desc = "Next tab" })
+vim.keymap.set("n", "<Left>", ":bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<Right>", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<Up>", ":tabprevious<CR>", { desc = "Previous tab" })
+vim.keymap.set("n", "<Down>", ":tabnext<CR>", { desc = "Next tab" })
 
--- Buffer navigation
-map('n', '<Left>', ':bprevious<CR>')
-map('n', '<Right>', ':bnext<CR>')
+-- yank
+vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank line" })
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank selected block" })
+vim.keymap.set("n", "<leader>Y", '"+y$', { desc = "Yank to line end" })
 
--- Tab navigation
-map('n', '<Up>', ':tabprevious<CR>')
-map('n', '<Down>', ':tabnext<CR>')
--- map('n', 'gn', ':tabnew<CR>')
--- map('n', 'gn', ':tabclose<CR>')
+-- highlight
+vim.keymap.set({ "n", "x", "o" }, "<leader>nh", '<cmd>nohl<cr>', { desc = "nohl" })

@@ -1,0 +1,7 @@
+{
+  "diagnostics.globals": ["vim",
+        "MiniPick"],
+    "diagnostics.disable": [
+        "undefined-global"
+    ]
+}

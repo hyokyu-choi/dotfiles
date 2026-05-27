@@ -1,8 +1,4 @@
--- path
-vim.opt.runtimepath:append('~/.vim,~/.vim/after')
-vim.opt.packpath:append('~/.vim')
-
--- tab/indent
+-- indent
 vim.opt.showtabline = 2
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
@@ -13,36 +9,51 @@ vim.opt.wrap = false
 
 -- ui
 vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = false
 vim.opt.termguicolors = true
-vim.opt.signcolumn = 'auto'
+vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 100
-
--- disable netrw at the very start of your init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
-
--- search
-vim.opt.incsearch = true
-vim.opt.ignorecase = false
-vim.opt.smartcase = false
+vim.opt.winborder = "single"
 
 -- backup
 vim.opt.backup = false
 vim.opt.swapfile = false
 
-vim.opt.fileencodings:append('utf-8,euc-kr')
+vim.opt.fileencodings:append("utf-8,euc-kr")
 
 -- io
 vim.opt.autoread = true
-vim.opt.mouse = 'a'
-vim.opt.clipboard = 'unnamed'
+vim.opt.mouse = "a"
 
-vim.g.loaded_perl_provider = 0
-vim.g.python3_host_prog = '$VIMPYTHON'
-
--- tex flavor
-vim.g.tex_flavor = 'latex'
+-- clipboard
+if vim.env.SSH_CONNECTION or vim.env.SSH_CLIENT then
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = {
+      ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+    },
+  }
+else
+  vim.g.clipboard = {
+    name = "wl-clipboard",
+    copy = {
+      ["+"] = { "wl-copy", "--type", "text/plain" },
+      ["*"] = { "wl-copy", "--type", "text/plain" },
+    },
+    paste = {
+      ["+"] = { "wl-paste", "--no-newline" },
+      ["*"] = { "wl-paste", "--no-newline" },
+    },
+    cache = {
+      enabled = true,
+    },
+  }
+end
