@@ -13,6 +13,16 @@ vim.lsp.enable({
   "marksman",
 })
 
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+      }
+    }
+  }
+})
+
 vim.filetype.add({
   extension = {
     mdx = "markdown.mdx",
