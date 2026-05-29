@@ -1,12 +1,26 @@
 [opener]
-tdf = [
-	{ run = "tdf %s", block = true, desc = "Open with tdf" },
-]
+tdf = [{ run = "tdf %s", block = true, desc = "Open with tdf" }]
 
 [open]
 prepend_rules = [
-	{ url = "*.pdf", use = [ "tdf", "reveal", "open" ] },
-	{ url = "*.png", use = [ "tdf", "reveal", "open" ] },
-	{ url = "*.jpg", use = [ "tdf", "reveal", "open" ] },
-	{ url = "*.gif", use = [ "tdf", "reveal", "open" ] },
+  { url = "*.pdf", use = [
+    "tdf",
+    "reveal",
+    "open",
+  ] },
+  { url = "*.png", use = [
+    "tdf",
+    "reveal",
+    "open",
+  ] },
+  { url = "*.jpg", use = [
+    "tdf",
+    "reveal",
+    "open",
+  ] },
+  { url = "*.gif", use = [
+    "tdf",
+    "reveal",
+    "open",
+  ] },
 ]
