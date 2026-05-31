@@ -17,10 +17,16 @@ function build_git_prompt() {
     STATUS="$LAST_STATUS"
     STATUS_CLOSE="]"
   fi
-  if [ "$CMSSW_ENV_ON" ] || [ "$ROOT_ENV_ON" ]; then
+  if [ "$CMSSW_BASE" ]; then
+    CMSSW_ENV_ON="CMSSW"
+  fi
+  if [ "$ROOTSYS" ]; then
+    ROOT_ENV_ON="ROOT"
+  fi
+  if [ "$CMSSW_BASE" ] || [ "$ROOTSYS" ]; then
     CMSSW_OPEN=" ["
     CMSSW_CLOSE="]"
-    if [ "$CMSSW_ENV_ON" ] && [ "$ROOT_ENV_ON" ]; then
+    if [ "$CMSSW_BASE" ] && [ "$ROOTSYS" ]; then
       CMSSW_BAR="|"
     else
       CMSSW_BAR=""
@@ -88,24 +94,22 @@ export VIMPYTHON="$HOME/micromamba/envs/gamma-py312/bin/python3"
 
 # cmssw / root setup
 function cmsset() {
-  if [ "$CMSSW_ENV_ON" = "CMSSW" ]; then
+  if [ "$CMSSW_BASE" ]; then
     echo -e "\e[36m[CMSSW Error!]\e[0m CMSSW env is already loaded!"
     return 0
   fi
 
   source /cvmfs/cms.cern.ch/cmsset_default.sh \
-  && export CMSSW_ENV_ON="CMSSW" \
   && echo -e "\e36m[CMSSW]\e0m CMSSW env loaded!"
 }
 
 function rootset() {
-  if [ "$ROOT_ENV_ON" = "ROOT" ]; then
+  if [ "$ROOTSYS" ]; then
     echo -e "\e[36m[ROOT Error!]\e[0m ROOT env is already loaded!"
     return 0
   fi
 
   source /cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-el9-gcc13-dbg/bin/thisroot.sh \
-  && export ROOT_ENV_ON="ROOT" \
   && echo -e "\e[36m[ROOT]\e[0m ROOT env loaded!"
 }
 
