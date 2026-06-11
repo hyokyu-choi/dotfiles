@@ -75,12 +75,6 @@ PS1='\[\e[33m\][@\h] \[\e[32m\]\w\[\e[0m\]${CMSSW_OPEN}\[\e[36m\]${CMSSW_ENV_ON}
 # bash editor
 export EDITOR="nvim"
 
-# ls with icon
-if command -v lsd &>/dev/null; then
-  alias ls="lsd"
-  alias ll="lsd -lh"
-fi
-
 # path
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/opt/bin:$PATH"
@@ -135,6 +129,12 @@ export NVM_DIR="$HOME/.nvm"
 
 # Cargo setting
 . "$HOME/.cargo/env"
+
+# ls with icon
+if command -v lsd &>/dev/null; then
+  alias ls="lsd"
+  alias ll="lsd -lh"
+fi
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'micromamba shell init' !!
