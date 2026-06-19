@@ -136,6 +136,9 @@ if command -v lsd &>/dev/null; then
   alias ll="lsd -lh"
 fi
 
+# Oil.nvim stand alone
+alias o="nvim -c \"Oil\""
+
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'micromamba shell init' !!
 export MAMBA_EXE="$HOME/.local/bin/micromamba";
