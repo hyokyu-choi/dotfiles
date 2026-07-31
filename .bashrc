@@ -94,7 +94,7 @@ function cmsset() {
   fi
 
   source /cvmfs/cms.cern.ch/cmsset_default.sh \
-  && echo -e "\e36m[CMSSW]\e0m CMSSW env loaded!"
+  && echo -e "\e[36m[CMSSW]\e[0m CMSSW env loaded!"
 }
 
 function rootset() {
